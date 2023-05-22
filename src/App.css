@@ -26,12 +26,18 @@
   justify-content: center;
 }
 
+.section-selector {
+  height: 5vh;
+  width: 100%;
+}
 .section-news {
   align-items: center;
   justify-content: center;
+  overflow-y: scroll;
 }
 
 .singleNews {
+  margin: auto;
   border: 1px solid black;
   width: 90%;
 }
@@ -65,14 +71,20 @@
 
   .section-news {
     display: flex;
-    flex-direction: row;
-    grid-template-columns: 1fr 1fr;
-
     overflow-x: scroll;
   }
+
+.singleNews {
+  width: 100vh;
+}  
 
 
 }
 
 @media only screen and (min-width: 850px) {
+  .section-news {
+    display: flex;
+    
+    overflow-x: scroll;
+  }
 }
