@@ -15,10 +15,12 @@
   color: black;
 }
 
-.section {
+.section-articles {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  min-height: 80vh;
+  overflow-y: scroll;
 }
 
 .section-header {
@@ -33,7 +35,7 @@
 .section-news {
   align-items: center;
   justify-content: center;
-  overflow-y: scroll;
+ 
 }
 
 .singleNews {
