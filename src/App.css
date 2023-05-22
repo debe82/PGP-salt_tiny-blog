@@ -3,10 +3,9 @@
   
 }
 
-
 .App-header {
   background-color: #909296e5;
-  min-height: 15vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,37 +18,61 @@
 .section {
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
 }
 
-.general {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid rgb(159, 229, 150);
-
+.section-header {
+  align-items: center;
+  justify-content: center;
 }
 
-.news {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid rgb(113, 100, 168);
+.section-news {
+  align-items: center;
+  justify-content: center;
 }
-
 
 .singleNews {
-  border: 1px solid rgb(228, 57, 51);
+  border: 1px solid black;
+  width: 90%;
 }
 
 .article-title {
-  align-items: center;
-  justify-content: center;
-  vertical-align:middle;
+  height: 3vh;
+  vertical-align: middle;
   border-bottom: 1px solid black;
 }
 
 .article-body {
+  height: 25vh;
+  width: 100%;
+  padding-left: 0px 2px 0px 2px;
   border-bottom: 1px solid black;
+  overflow-y: scroll;
+}
+
+.footer-tag {
+  margin-bottom: 2px;
 }
 
 .article-tags {
   display: inline;
+}
+
+
+
+
+@media only screen and (min-width: 550px) {
+
+  .section-news {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+
+    overflow-x: scroll;
+  }
+
+
+}
+
+@media only screen and (min-width: 850px) {
 }

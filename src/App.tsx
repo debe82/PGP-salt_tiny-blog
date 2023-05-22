@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { IArticle } from './helper/interfaces';
+import { IArticle, Article, fakeArticle } from './helper/interfaces';
 import { getArticles } from './api/dataManagement';
 
 function App() {
 
   const [listOfArticles, setListOfArticles] = useState([]);
+  const [fakeList, setFakeList] = useState<Article[]>([]);
   const [showNews, setShowNews] = useState(true);
  
-  const fetchData =async () => {
+  const fetchData  =async () => {
     console.log("fetchData()")
     const allArticles = await getArticles();
     setListOfArticles(allArticles);
+  }
+
+  const fillArticle = () => {
+    let arrArticles: Article[] = [];
+    for(let i=0; i < 10; i++) {
+      arrArticles.push(fakeArticle);
+    }
+
+    setFakeList(arrArticles);
   }
   
   const toggleShowNews = (value: boolean) => {
@@ -23,6 +33,7 @@ function App() {
 
   useEffect(() => {
     //fetchData();
+    fillArticle();
   }, []);
 
   return (
@@ -31,16 +42,17 @@ function App() {
         Tiny Blog
       </header>
       <section className='section'>
-        <section className='general'>
+        <section className='section-header'>
           <h3>Magical</h3>
           <select>
             <option value="true" onChange={()=> toggleShowNews(true)}>Show news</option>
             <option value="false" onChange={()=> toggleShowNews(false)}>Hide</option>
-            </select>
+          </select>
         </section>
         {showNews ?
-          <section className='news'>
-          {listOfArticles.filter((a: IArticle) => a.tags.includes("magical")).map((item: IArticle, index: number) => {
+          <section className='section-news'>
+          {//listOfArticles.filter((a: IArticle) => a.tags.includes("magical")).map((item: IArticle, index: number) => {
+            fakeList.map((item: IArticle, index: number) => {
             return (
               <section key={index} className='singleNews'>
                 <h5 className='article-title'>{item.title}</h5>
@@ -56,31 +68,150 @@ function App() {
                   }
                 </footer>
               </section>
-            )
-
-          })}
-           
-
-
-        </section>
+            )})}
+          </section>
         : null
         }
-
-
-
       </section>  
-      <section className='section'>section2</section>
-        <section className='filter'></section>
-        <section className='news'></section>
-      <section className='section'>section3</section>
-        <section className='filter'></section>
-        <section className='news'></section>
-      <section className='section'>section4</section>
-        <section className='filter'></section>
-        <section className='news'></section>
-      <section className='section'>section5</section>
-        <section className='filter'></section>
-        <section className='news'></section>
+
+      <section className='section'>
+        <section className='section-header'>
+          <h3>Mystery</h3>
+          <select>
+            <option value="true" onChange={()=> toggleShowNews(true)}>Show news</option>
+            <option value="false" onChange={()=> toggleShowNews(false)}>Hide</option>
+          </select>
+        </section>
+        {showNews ?
+          <section className='section-news'>
+          {//listOfArticles.filter((a: IArticle) => a.tags.includes("mystery")).map((item: IArticle, index: number) => {
+            fakeList.map((item: IArticle, index: number) => {
+            return (
+              <section key={index} className='singleNews'>
+                <h5 className='article-title'>{item.title}</h5>
+                <div></div>
+                <article className='article-body'>{item.body}</article>
+                <div></div>
+                <footer className='footer-tag'>
+                  {item.tags.map((tag) => {
+                    return (
+                      <pre className='article-tags'>{tag} </pre>
+                    )})
+
+                  }
+                </footer>
+              </section>
+            )})}
+          </section>
+        : null
+        }        
+      </section>
+
+
+
+      <section className='section'>
+      <section className='section-header'>
+          <h3>Crime</h3>
+          <select>
+            <option value="true" onChange={()=> toggleShowNews(true)}>Show news</option>
+            <option value="false" onChange={()=> toggleShowNews(false)}>Hide</option>
+          </select>
+        </section>
+        {showNews ?
+          <section className='section-news'>
+          {//listOfArticles.filter((a: IArticle) => a.tags.includes("crime")).map((item: IArticle, index: number) => {
+            fakeList.map((item: IArticle, index: number) => {
+            return (
+              <section key={index} className='singleNews'>
+                <h5 className='article-title'>{item.title}</h5>
+                <div></div>
+                <article className='article-body'>{item.body}</article>
+                <div></div>
+                <footer className='footer-tag'>
+                  {item.tags.map((tag) => {
+                    return (
+                      <pre className='article-tags'>{tag} </pre>
+                    )})
+
+                  }
+                </footer>
+              </section>
+            )})}
+          </section>
+        : null
+        }        
+      </section>
+
+
+
+      <section className='section'>
+      <section className='section-header'>
+          <h3>Fiction</h3>
+          <select>
+            <option value="true" onChange={()=> toggleShowNews(true)}>Show news</option>
+            <option value="false" onChange={()=> toggleShowNews(false)}>Hide</option>
+          </select>
+        </section>
+        {showNews ?
+          <section className='section-news'>
+          {//listOfArticles.filter((a: IArticle) => a.tags.includes("fiction")).map((item: IArticle, index: number) => {
+            fakeList.map((item: IArticle, index: number) => {
+            return (
+              <section key={index} className='singleNews'>
+                <h5 className='article-title'>{item.title}</h5>
+                <div></div>
+                <article className='article-body'>{item.body}</article>
+                <div></div>
+                <footer className='footer-tag'>
+                  {item.tags.map((tag) => {
+                    return (
+                      <pre className='article-tags'>{tag} </pre>
+                    )})
+
+                  }
+                </footer>
+              </section>
+            )})}
+          </section>
+        : null
+        }
+      </section>
+
+
+
+      <section className='section'>
+        <section className='section-header'>
+          <h3>History</h3>
+          <select>
+            <option value="true" onChange={()=> toggleShowNews(true)}>Show news</option>
+            <option value="false" onChange={()=> toggleShowNews(false)}>Hide</option>
+          </select>
+        </section>
+        {showNews ?
+          <section className='section-news'>
+          {//listOfArticles.filter((a: IArticle) => a.tags.includes("history")).map((item: IArticle, index: number) => {
+            fakeList.map((item: IArticle, index: number) => {
+            return (
+              <section key={index} className='singleNews'>
+                <h5 className='article-title'>{item.title}</h5>
+                <div></div>
+                <article className='article-body'>{item.body}</article>
+                <div></div>
+                <footer className='footer-tag'>
+                  {item.tags.map((tag) => {
+                    return (
+                      <pre className='article-tags'>{tag} </pre>
+                    )})
+
+                  }
+                </footer>
+              </section>
+            )})}
+          </section>
+        : null
+        }        
+      </section>
+
     </div>
   );
 }
