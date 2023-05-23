@@ -1,5 +1,6 @@
-import { useContext, useEffect } from "react";
+
 import { IArticle, TArticle } from "../helper/interfaces";
+import '../App.css';
 
 type Props = {
   argument: string,
@@ -17,7 +18,7 @@ function Article(props: Props) {
         console.log("item: ", item);
         return (
         <section key={postIndex} className='singleNews'>
-          <h5 className='article-title'>{item.title}</h5>
+          <label className='article-title'>{item.title}</label>
           <div></div>
           <article className='article-body'>{item.body}</article>
           <div></div>

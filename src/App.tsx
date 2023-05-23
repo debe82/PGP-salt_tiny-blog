@@ -42,24 +42,27 @@ function App() {
       <header className="App-header">
         Tiny Blog
       </header>
-      <section className='section-articles'>
+      <section className='section-container'>
         <section className='section-header'>
-          <select defaultValue="magical" onChange={(e)=> toggleShowNews(e)}>
-            <option className='section-selector' value="magical">Magical</option>
-            <option className='section-selector' value="mystery">Mystery</option>
-            <option className='section-selector' value="crime">Crime</option>
-            <option className='section-selector' value="fiction">Fiction</option>
-            <option className='section-selector' value="history">History</option>
-            <option className='section-selector' value="tag3">Tag3</option>
+          <select className='section-selector' defaultValue="magical" onChange={(e)=> toggleShowNews(e)}>
+            <option className='option-selector' value="magical">Magical</option>
+            <option className='option-selector' value="mystery">Mystery</option>
+            <option className='option-selector' value="crime">Crime</option>
+            <option className='option-selector' value="fiction">Fiction</option>
+            <option className='option-selector' value="history">History</option>
+            <option className='option-selector' value="tag1">Tag1</option>
+            <option className='option-selector' value="tag3">Tag3</option>
           </select>
         </section>
-        {showNews ?
-          <Article list={listOfArticles} argument={argument}/>
-        : null
-        }
+
+        <section className='section-articles'>
+          {showNews ?
+            <Article list={listOfArticles} argument={argument}/>
+          : null
+          }
+        </section>
       </section>  
-
-
+      <div></div>
     </div>
   );
 }
