@@ -124,6 +124,12 @@
     font-size: calc(8px + 1.5vmin);
   }
 
+  .section-selector {
+    height: 2vh;
+    width: 15%;
+    font-size: calc(4px + 1vmin);
+  }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -141,5 +147,7 @@
   .article-title {
     font-size: calc(7px + 1.5vmin);
   }
+
+
 
 }
