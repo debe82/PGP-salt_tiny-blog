@@ -18,7 +18,9 @@ function Article(props: Props) {
         console.log("item: ", item);
         return (
         <section key={postIndex} className='singleNews'>
-          <label className='article-title'>{item.title}</label>
+          <section className="section-label_title">
+            <label className='article-title'>{item.title}</label>
+          </section>
           <div></div>
           <article className='article-body'>{item.body}</article>
           <div></div>

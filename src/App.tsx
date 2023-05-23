@@ -50,8 +50,6 @@ function App() {
             <option className='option-selector' value="crime">Crime</option>
             <option className='option-selector' value="fiction">Fiction</option>
             <option className='option-selector' value="history">History</option>
-            <option className='option-selector' value="tag1">Tag1</option>
-            <option className='option-selector' value="tag3">Tag3</option>
           </select>
         </section>
 
