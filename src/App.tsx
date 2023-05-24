@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { IArticle, TArticle, fakeArticle, fakeArticle2 } from './helper/interfaces';
 import { getArticles } from './api/dataManagement';
 import Article from './component/Article';
 
@@ -8,8 +7,6 @@ function App() {
 
   const [listOfArticles, setListOfArticles] = useState([]);
   const [argument, setArgument] = useState("magical")
-  const [fakeList, setFakeList] = useState<TArticle[]>([]);
-  const [showNews, setShowNews] = useState(true);
 
   const fetchData  =async () => {
     console.log("fetchData()");
@@ -17,24 +14,14 @@ function App() {
     console.log("allArticles: ", allArticles);
     setListOfArticles(allArticles);
   }
-
-  const fillArticle = () => {
-    let arrArticles: TArticle[] = [];
-    for(let i=0; i < 10; i++) {
-      arrArticles.push(fakeArticle);
-    }
-    arrArticles.push(fakeArticle2);
-    setFakeList(arrArticles);
-  }
   
-  const toggleShowNews = (e: any) => {
+  const toggleShowNews = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const argValue = e.target.value;
     setArgument(argValue);
   }
 
   useEffect(() => {
     fetchData();
-    //fillArticle();
   }, [argument]);
 
   return (
@@ -54,10 +41,7 @@ function App() {
         </section>
 
         <section className='section-articles'>
-          {showNews ?
-            <Article list={listOfArticles} argument={argument}/>
-          : null
-          }
+          <Article list={listOfArticles} argument={argument}/>
         </section>
       </section>  
       <div></div>

@@ -8,8 +8,6 @@ type Props = {
 }
 
 function Article(props: Props) {
-
-
   return(
 
     <section className='section-news'>
