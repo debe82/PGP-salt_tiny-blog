@@ -91,14 +91,11 @@
 
 @media only screen and (min-width: 500px) {
 
-  .section-news {
+  .section-articles {
     display: grid;
     padding: 10px;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
-  }
-
-  .section-articles {
     max-height: 87vh;
   }  
 
@@ -109,14 +106,12 @@
 }
 
 @media only screen and (min-width: 850px) {
-  .section-news {
+
+  .section-articles {
     display: grid;
     padding: 10px;
     grid-gap: 10px;
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .section-articles {
     max-height: 88vh;
   }  
 
@@ -133,14 +128,12 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .section-news {
+
+  .section-articles {
     display: grid;
     padding: 10px;
     grid-gap: 10px;
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .section-articles {
     max-height: 88vh;
   }  
 

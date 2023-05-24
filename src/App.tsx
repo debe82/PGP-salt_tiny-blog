@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { getArticles } from './api/dataManagement';
 import Article from './component/Article';
+import { IArticle } from './helper/interfaces';
 
 function App() {
 
@@ -41,7 +42,11 @@ function App() {
         </section>
 
         <section className='section-articles'>
-          <Article list={listOfArticles} argument={argument}/>
+          {listOfArticles.filter((a: IArticle) => a.tags.includes(argument)).map((item: IArticle, postIndex: number) => { 
+            return <Article article={item} key={postIndex}/>
+          })
+          }
+          
         </section>
       </section>  
       <div></div>
