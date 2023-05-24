@@ -10,9 +10,7 @@ function App() {
   const [argument, setArgument] = useState("magical")
 
   const fetchData  =async () => {
-    console.log("fetchData()");
     const allArticles = await getArticles();
-    console.log("allArticles: ", allArticles);
     setListOfArticles(allArticles);
   }
   

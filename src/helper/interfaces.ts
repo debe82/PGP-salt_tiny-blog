@@ -1,4 +1,3 @@
-import { isParenthesizedTypeNode } from "typescript"
 
 export const argList = [
   {value: "magical", label: "Magical"},
