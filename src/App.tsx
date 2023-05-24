@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { getArticles } from './api/dataManagement';
 import Article from './component/Article';
-import { IArticle } from './helper/interfaces';
+import { IArticle, argList } from './helper/models';
 
 function App() {
 
@@ -31,11 +31,7 @@ function App() {
       <section className='section-container'>
         <section className='section-header'>
           <select className='section-selector' defaultValue="magical" onChange={(e)=> toggleShowNews(e)}>
-            <option className='option-selector' value="magical">Magical</option>
-            <option className='option-selector' value="mystery">Mystery</option>
-            <option className='option-selector' value="crime">Crime</option>
-            <option className='option-selector' value="fiction">Fiction</option>
-            <option className='option-selector' value="history">History</option>
+            {argList.map(tag => <option value={tag}>{tag.toUpperCase()}</option>)}
           </select>
         </section>
 
@@ -44,10 +40,8 @@ function App() {
             return <Article article={item} key={postIndex}/>
           })
           }
-          
         </section>
       </section>  
-      <div></div>
     </div>
   );
 }

@@ -61,19 +61,19 @@
 }
 
 .section-label_title {
-  height: 5vh;
+  height: 10vh;
 }
 
 
 .article-title {
-  font-size: calc(9px + 3vmin);
+  font-size: calc(8px + 3vmin);
   font-family: 'Newsreader', serif;
   font-weight: bolder;
 
 }
 
 .article-body {
-  height: 25vh;
+  height: calc(9px + 40vh);
   width: 100%;
   text-align: justify;
   margin-top: 20px;
@@ -89,7 +89,20 @@
   display: inline;
 }
 
+@media only screen and (min-width: 300px) {
+  .section-articles {
+    overflow-y: scroll;
+    margin-bottom: 5px;
+  }
+
+  .article-title {
+    font-size: calc(9px + 3vmin);
+  }
+  
+}
+
 @media only screen and (min-width: 500px) {
+
 
   .section-articles {
     display: grid;
@@ -106,6 +119,7 @@
 }
 
 @media only screen and (min-width: 850px) {
+
 
   .section-articles {
     display: grid;
@@ -141,6 +155,9 @@
     font-size: calc(7px + 1.5vmin);
   }
 
+  .article-body {
+    height: calc(9px + 50vh);
 
+  }
 
 }

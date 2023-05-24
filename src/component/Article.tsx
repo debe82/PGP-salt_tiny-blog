@@ -1,5 +1,5 @@
 
-import { TArticle } from "../helper/interfaces";
+import { TArticle } from "../helper/models";
 import '../App.css';
 
 type Props = {
