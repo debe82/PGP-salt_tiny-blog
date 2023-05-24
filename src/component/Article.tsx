@@ -11,9 +11,10 @@ function Article(props: Props) {
   return(
 
     <section className='section-news'>
-    {props.list.filter((a: IArticle) => a.tags.includes(props.argument)).map((item: IArticle, postIndex: number) => {
+    {props.list.filter((a: IArticle) => a.tags.includes(props.argument)).map((item: IArticle, postIndex: number) => { 
+      //this should be in the App, not in the Article. After moving the filter outside only the single post must be passed as prop
+
       //props.list.filter((a: IArticle) => a.tags.includes(props.argument)).map((item: TArticle, postIndex: number) => {
-        console.log("item: ", item);
         return (
         <section key={postIndex} className='singleNews'>
           <section className="section-label_title">
