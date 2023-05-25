@@ -9,18 +9,18 @@ type Props = {
 function Article(props: Props) {
   return(
 
-    <section className='section-news'>
-        <section className='singleNews'>
-          <section className="section-label_title">
-            <label className='article-title'>{props.article.title}</label>
+    <section className='section__news'>
+        <section className='section__news--article'>
+          <section className="section__news--article--title">
+            <label className='article__title'>{props.article.title}</label>
           </section>
           <div></div>
-          <article className='article-body'>{props.article.body}</article>
+          <article className='article__body'>{props.article.body}</article>
           <div></div>
-          <footer className='footer-tag'>
+          <footer className='article__tags'>
             {props.article.tags.map((tag: string, tagIndex: number) => {
               return (
-                <pre key={tagIndex} className='article-tags'>{tag} </pre>
+                <pre key={tagIndex} className='article__tags--tags'>{tag} </pre>
               )})
 
             }

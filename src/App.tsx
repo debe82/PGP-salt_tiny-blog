@@ -28,14 +28,14 @@ function App() {
       <header className="App-header">
         Tiny Blog
       </header>
-      <section className='section-container'>
-        <section className='section-header'>
-          <select className='section-selector' defaultValue="magical" onChange={(e)=> toggleShowNews(e)}>
+      <section className='articles__section--container'>
+        <section className='articles__section--header'>
+          <select className='articles__section--header--selector' defaultValue="magical" onChange={(e)=> toggleShowNews(e)}>
             {argList.map(tag => <option value={tag}>{tag.toUpperCase()}</option>)}
           </select>
         </section>
 
-        <section className='section-articles'>
+        <section className='articles__section--articles'>
           {listOfArticles.filter((a: IArticle) => a.tags.includes(argument)).map((item: IArticle, postIndex: number) => { 
             return <Article article={item} key={postIndex}/>
           })

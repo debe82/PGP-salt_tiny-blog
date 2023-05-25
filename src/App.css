@@ -22,57 +22,57 @@
   border-bottom: 1px solid black;
 }
 
-.section-container {
+.articles__section--container {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
   margin-bottom: 2px;
 }
 
-.section-header {
+.articles__section--header {
   align-items: center;
   justify-content: center;
   margin-bottom: 5px;
 }
 
-.section-selector {
+.articles__section--header--selector {
   height: 3vh;
   width: 20%;
   font-size: calc(6px + 2vmin);
   margin-top: 10px;
 }
 
-.section-articles {
+.articles__section--articles {
   overflow-y: scroll;
   margin-bottom: 5px;
 }
 
-.section-news {
+.section__news {
   align-items: center;
   justify-content: center;
   max-height: 85vh;
 }
 
-.singleNews {
+.section__news--article {
   margin: auto;
   border-bottom: 1px solid black;
   margin: 10px 10px;
   width: 90%;
 }
 
-.section-label_title {
+.section__news--article--title {
   height: 10vh;
 }
 
 
-.article-title {
+.article__title {
   font-size: calc(8px + 3vmin);
   font-family: 'Newsreader', serif;
   font-weight: bolder;
 
 }
 
-.article-body {
+.article__body {
   height: calc(9px + 40vh);
   width: 100%;
   text-align: justify;
@@ -80,22 +80,22 @@
   font-family: 'Newsreader', serif;
 }
 
-.footer-tag {
+.article__tags {
   text-align: left;
   margin-bottom: 10px;
 }
 
-.article-tags {
+.article__tags--tags {
   display: inline;
 }
 
 @media only screen and (min-width: 300px) {
-  .section-articles {
+  .articles__section--articles {
     overflow-y: scroll;
     margin-bottom: 5px;
   }
 
-  .article-title {
+  .article__title {
     font-size: calc(9px + 3vmin);
   }
   
@@ -104,7 +104,7 @@
 @media only screen and (min-width: 500px) {
 
 
-  .section-articles {
+  .articles__section--articles {
     display: grid;
     padding: 10px;
     grid-gap: 10px;
@@ -112,7 +112,7 @@
     max-height: 87vh;
   }  
 
-  .article-title {
+  .article__title {
     font-size: calc(9px + 2vmin);
   }
 
@@ -121,7 +121,7 @@
 @media only screen and (min-width: 850px) {
 
 
-  .section-articles {
+  .articles__section--articles {
     display: grid;
     padding: 10px;
     grid-gap: 10px;
@@ -129,11 +129,15 @@
     max-height: 88vh;
   }  
 
-  .article-title {
+  .article__body:hover {
+    transform: scale(1.1);
+  }
+
+  .article__title {
     font-size: calc(8px + 1.5vmin);
   }
 
-  .section-selector {
+  .articles__section--header--selector {
     height: 2vh;
     width: 15%;
     font-size: calc(4px + 1vmin);
@@ -143,7 +147,7 @@
 
 @media only screen and (min-width: 1024px) {
 
-  .section-articles {
+  .articles__section--articles {
     display: grid;
     padding: 10px;
     grid-gap: 10px;
@@ -151,11 +155,11 @@
     max-height: 88vh;
   }  
 
-  .article-title {
+  .article__title {
     font-size: calc(7px + 1.5vmin);
   }
 
-  .article-body {
+  .article__body {
     height: calc(9px + 50vh);
 
   }
