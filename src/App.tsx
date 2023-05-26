@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { getArticles } from './api/dataManagement';
-import Article from './component/Article';
-import { IArticle, argList } from './helper/models';
+import { getPosts } from './api/dataManagement';
+import Post from './component/Post';
+import { IPost, argList } from './helper/models';
 
 function App() {
 
-  const [listOfArticles, setListOfArticles] = useState([]);
+  const [listOfPost, setListOfPost] = useState([]);
   const [argument, setArgument] = useState("magical")
 
   const fetchData  =async () => {
-    const allArticles = await getArticles();
-    setListOfArticles(allArticles);
+    const allPost = await getPosts();
+    setListOfPost(allPost);
   }
   
   const toggleShowNews = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -21,23 +21,23 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, [argument]);
+  }, []);
 
   return (
     <div className="App">
       <header className="App-header">
         Tiny Blog
       </header>
-      <section className='articles__section--container'>
-        <section className='articles__section--header'>
-          <select className='articles__section--header--selector' defaultValue="magical" onChange={(e)=> toggleShowNews(e)}>
+      <section className='post__section--container'>
+        <section className='post__section--header'>
+          <select className='post__section--header--selector' defaultValue="magical" onChange={(e)=> toggleShowNews(e)}>
             {argList.map(tag => <option value={tag}>{tag.toUpperCase()}</option>)}
           </select>
         </section>
 
-        <section className='articles__section--articles'>
-          {listOfArticles.filter((a: IArticle) => a.tags.includes(argument)).map((item: IArticle, postIndex: number) => { 
-            return <Article article={item} key={postIndex}/>
+        <section className='post__section--post'>
+          {listOfPost.filter((a: IPost) => a.tags.includes(argument)).map((item: IPost, postIndex: number) => { 
+            return <Post post={item} key={postIndex}/>
           })
           }
         </section>

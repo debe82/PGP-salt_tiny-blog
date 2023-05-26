@@ -5,7 +5,6 @@
 
 .App {
   text-align: center;
-  background-color: #f5f0f0c0;
 }
 
 .App-header {
@@ -22,27 +21,27 @@
   border-bottom: 1px solid black;
 }
 
-.articles__section--container {
+.post__section--container {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid black;
   margin-bottom: 2px;
 }
 
-.articles__section--header {
+.post__section--header {
   align-items: center;
   justify-content: center;
   margin-bottom: 5px;
 }
 
-.articles__section--header--selector {
+.post__section--header--selector {
   height: 3vh;
   width: 20%;
   font-size: calc(6px + 2vmin);
   margin-top: 10px;
 }
 
-.articles__section--articles {
+.post__section--post {
   overflow-y: scroll;
   margin-bottom: 5px;
 }
@@ -53,49 +52,49 @@
   max-height: 85vh;
 }
 
-.section__news--article {
+.section__news--post {
   margin: auto;
   border-bottom: 1px solid black;
   margin: 10px 10px;
   width: 90%;
 }
 
-.section__news--article--title {
+.section__news--post--title {
   height: 10vh;
 }
 
 
-.article__title {
+.post__title {
   font-size: calc(8px + 3vmin);
   font-family: 'Newsreader', serif;
   font-weight: bolder;
 
 }
 
-.article__body {
-  height: calc(9px + 40vh);
+.post__body {
+  height: calc(9px + 20vh);
   width: 100%;
   text-align: justify;
   margin-top: 20px;
   font-family: 'Newsreader', serif;
 }
 
-.article__tags {
+.post__tags {
   text-align: left;
   margin-bottom: 10px;
 }
 
-.article__tags--tags {
+.post__tags--tags {
   display: inline;
 }
 
 @media only screen and (min-width: 300px) {
-  .articles__section--articles {
+  .post__section--post {
     overflow-y: scroll;
     margin-bottom: 5px;
   }
 
-  .article__title {
+  .post__title {
     font-size: calc(9px + 3vmin);
   }
   
@@ -103,25 +102,32 @@
 
 @media only screen and (min-width: 500px) {
 
-
-  .articles__section--articles {
-    display: grid;
+  .post__section--post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+/* 
     padding: 10px;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
     max-height: 87vh;
+     */
   }  
 
-  .article__title {
+  .section__news--post {
+    width: 400px;
+  }
+
+  .post__title {
     font-size: calc(9px + 2vmin);
   }
 
 }
-
+/* 
 @media only screen and (min-width: 850px) {
 
 
-  .articles__section--articles {
+  .post__section--post {
     display: grid;
     padding: 10px;
     grid-gap: 10px;
@@ -129,15 +135,15 @@
     max-height: 88vh;
   }  
 
-  .article__body:hover {
+  .post__body:hover {
     transform: scale(1.1);
   }
 
-  .article__title {
+  .post__title {
     font-size: calc(8px + 1.5vmin);
   }
 
-  .articles__section--header--selector {
+  .post__section--header--selector {
     height: 2vh;
     width: 15%;
     font-size: calc(4px + 1vmin);
@@ -147,7 +153,7 @@
 
 @media only screen and (min-width: 1024px) {
 
-  .articles__section--articles {
+  .post__section--post {
     display: grid;
     padding: 10px;
     grid-gap: 10px;
@@ -155,13 +161,15 @@
     max-height: 88vh;
   }  
 
-  .article__title {
+  .post__title {
     font-size: calc(7px + 1.5vmin);
   }
 
-  .article__body {
+  .post__body {
     height: calc(9px + 50vh);
 
   }
 
 }
+
+ */
